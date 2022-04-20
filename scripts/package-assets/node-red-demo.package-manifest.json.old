@@ -1,0 +1,50 @@
+{
+  "version": "1.0.0",
+  "id": "grafana-monitoring",
+  "services": {
+    "proxyMapping": [
+      {
+        "name": "Node-Red-Demo",
+        "url": "/node-red-demo",
+        "binding": ":2244",
+        "restricted": [
+        ]        
+      }
+    ]
+  },
+  "menus": {
+  
+    "sidebar": [
+      {
+        "id": "node-red-demo",
+        "title": "Node-RED-demo",
+        "icon": "ctrlx-ic-node-red",
+        
+          {
+            "id": "node-red-admin-demo",
+            "title": "Flow Editor",
+            "link": "/node-red-demo/"
+         
+          },
+          {
+            "id": "node-red-dashboard-demo",
+            "title": "Dashboard",
+            "link": "/node-red/ui"
+          }
+        ]
+      }
+    ],
+    
+    
+    "settings": [
+    ],
+    "overview": [
+      {
+        "id": "Node-Red-Demo",
+        "title": "Node-RED-Demo Dashboard",
+        "icon": "bosch-ic-desktop-graph",
+        "link": "/node-red-demo/ui"
+      }
+    ]    
+  }
+}

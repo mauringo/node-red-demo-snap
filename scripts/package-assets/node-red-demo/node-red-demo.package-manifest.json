@@ -1,0 +1,51 @@
+{
+  "version": "1.3.0",
+  "id": "NRDEMO",
+  "services": {
+    "proxyMapping": [
+      {
+        "name": "Node-Red-Demo",
+        "url": "/node-red-demo",
+        "binding": ":2244",
+        "restricted": [
+        ]        
+      }
+    ]
+  },
+  "menus": {
+    "sidebar": [
+      {
+        "id": "node-red-demo",
+        "title": "Node-RED-demo",
+        "icon": "ctrlx-ic-node-red",
+        "permissions": [
+        ],
+        "items": [
+          {
+            "id": "node-red-admin-demo",
+            "title": "Flow Editor",
+            "link": "/node-red-demo/",
+            "permissions": []
+          },
+           {
+            "id": "node-red-dashboard-demo",
+            "title": "Dashboard",
+            "link": "/node-red-demo/ui",
+            "permissions": []
+          }
+          
+        ]
+      }
+    ],
+    "settings": [],
+    "overview": [
+      {
+        "id": "Node-Red-Demo",
+        "title": "Node-RED-Demo Dashboard",
+        "icon": "bosch-ic-desktop-graph",
+        "link": "/node-red-demo/ui",
+        "permissions": []
+      }
+    ]
+  }
+}
