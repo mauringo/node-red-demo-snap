@@ -80,12 +80,21 @@ parts:
     source: .
     stage-packages:
       - python
+      - ffmpeg
+      - libglu1-mesa 
+      - libxi-dev 
+      - libxmu-dev 
+      - libglu1-mesa-dev
+      - freeglut3
+      - libpulse0
+      - musl-dev
+      - musl
     override-build: | # Whatever steps needed to install node-red into the install folder, which gets incorporated into the snap
       PATH=$PATH:../npm/bin
       apt-get install libatomic1
       npm config set unsafe-perm True
       # npm install --prefix $SNAPCRAFT_PART_INSTALL/lib
-      npm install --no-audit --no-fund --prefix $SNAPCRAFT_PART_INSTALL/lib node-red node-red-node-ping node-red-node-random node-red-node-rbe node-red-node-serialport node-red-dashboard node-red-contrib-opcua node-red-contrib-influxdb node-red-contrib-mongodb3 node-red-contrib-ctrlx-automation node-red-contrib-s7 node-red-contrib-cip-ethernet-ip node-red-contrib-modbus node-red-contrib-opcda-client
+      npm install --no-audit --no-fund --prefix $SNAPCRAFT_PART_INSTALL/lib node-red node-red-node-ping node-red-node-base64 node-red-node-random node-red-node-rbe node-red-node-serialport node-red-dashboard node-red-contrib-opcua node-red-contrib-influxdb node-red-contrib-mongodb3 node-red-contrib-ctrlx-automation node-red-contrib-s7 node-red-contrib-cip-ethernet-ip node-red-contrib-modbus node-red-contrib-opcda-client
       find $SNAPCRAFT_PART_INSTALL -type f -name '*.js.swp' -delete
       find $SNAPCRAFT_PART_INSTALL/lib/node_modules -type d -name test -prune -exec rm -rf {} \;
       find $SNAPCRAFT_PART_INSTALL/lib/node_modules -type d -name doc -prune -exec rm -rf {} \;
